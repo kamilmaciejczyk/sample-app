@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Task Manager</h1>
+
+  <div class="card">
+    <label>Title</label>
+    <input [(ngModel)]="newTitle" placeholder="e.g. Buy groceries">
+    <label>Description</label>
+    <textarea [(ngModel)]="newDescription" rows="3" placeholder="Optional description"></textarea>
+    <label>Due date</label>
+    <input type="date" [(ngModel)]="newDueDate">
+    <div style="margin-top: 8px;" class="flex">
+      <button class="primary" (click)="add()">Add task</button>
+      <button class="secondary" (click)="refresh()">Refresh</button>
+      <span *ngIf="loading()">Loading...</span>
+      <span style="color:#ef4444" *ngIf="error()">{{error()}}</span>
+    </div>
+  </div>
+
+  <div class="card" *ngFor="let t of tasks()">
+    <div class="flex" style="justify-content: space-between;">
+      <div>
+        <input type="checkbox" [checked]="t.completed" (change)="toggle(t)"> 
+        <strong [style.textDecoration]="t.completed ? 'line-through' : 'none'">{{t.title}}</strong>
+        <div *ngIf="t.description">{{t.description}}</div>
+        <div *ngIf="t.dueDate">Due: {{t.dueDate}}</div>
+      </div>
+      <button class="danger" (click)="remove(t)">Delete</button>
+    </div>
+  </div>
+</div>

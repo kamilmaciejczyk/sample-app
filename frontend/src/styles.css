@@ -1,0 +1,10 @@
+:root { font-family: Inter, system-ui, Arial, sans-serif; }
+.container { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+input, textarea { width: 100%; padding: 8px; margin: 4px 0 8px; border: 1px solid #d1d5db; border-radius: 6px; }
+button { padding: 8px 12px; border: 0; border-radius: 6px; cursor: pointer; }
+button.primary { background: #2563eb; color: white; }
+button.danger { background: #ef4444; color: white; }
+button.secondary { background: #6b7280; color: white; }
+label { font-weight: 600; }
+.flex { display: flex; gap: 8px; align-items: center; }
